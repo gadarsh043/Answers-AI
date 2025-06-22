@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './firebase/config';
 import Login from './components/Login';
 import ChargingStationDashboard from './components/ChargingStationDashboard';
@@ -18,6 +18,14 @@ function App() {
     return () => unsubscribe();
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
+
   if (loading) {
     return (
       <div className="loading-container">
@@ -29,7 +37,11 @@ function App() {
 
   return (
     <div className="App">
-      {user ? <ChargingStationDashboard /> : <Login />}
+      {user ? (
+        <ChargingStationDashboard user={user} onLogout={handleLogout} />
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }
