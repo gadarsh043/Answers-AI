@@ -1,0 +1,55 @@
+// Charging Station Dashboard styles
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 60px;
+  transition: margin-right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  padding: 0 2rem 2rem;
+  max-width: 100%;
+  flex: 1;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.graph-section {
+  background: #2d2d2d;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #3d3d3d;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-section {
+  border-radius: 12px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+} 
