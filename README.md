@@ -2,6 +2,10 @@
 
 A modern React dashboard for monitoring and analyzing charging station performance with interactive charts, KPIs, and variable management.
 
+## 🚀 Live Demo
+
+**[View Live Demo](https://answers-ai.netlify.app/)**
+
 ## Features
 
 - **Google Authentication** - Secure login with Firebase Auth
